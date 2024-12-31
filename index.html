@@ -25,6 +25,12 @@
                 <option value="minimal">High Contrast</option>
                 <option value="soft">Low Contrast</option>
             </select>
+            <select id="brightness_strategy">
+                <option value="perceived">Perceived Brightness</option>
+                <option value="average">Average RGB</option>
+                <option value="lightness">Lightness</option>
+                <option value="luminosity">Luminosity</option>
+            </select>
             <select id="output_format">
                 <option value="text">Text (160 columns)</option>
                 <option value="text-wide">Text (320 columns)</option>
@@ -43,6 +49,8 @@
         <a href="https://github.com/dolan/ascii-out" target="_blank">View on GitHub</a>
     </footer>
 
+    <script src="js/brightness_strategy.js"></script>
+    <script src="js/brightness_strategies.js"></script>
     <script src="js/image_processor.js"></script>
     <script src="js/ascii_converter.js"></script>
     <script src="js/file_handler.js"></script>

@@ -135,12 +135,13 @@ class App {
             // Get output format and style
             const format = document.getElementById('output_format').value;
             const style = document.getElementById('art_style').value;
+            const strategy = document.getElementById('brightness_strategy').value;
             
             // Determine width based on format
             const width = format === 'text-wide' ? 320 : 160;
             
             // Convert to ASCII
-            const asciiArt = this.asciiConverter.convertToAscii(this.currentImage, width, style);
+            const asciiArt = this.asciiConverter.convertToAscii(this.currentImage, width, style, strategy);
             
             // Display ASCII art
             const outputElement = document.getElementById('ascii_output');

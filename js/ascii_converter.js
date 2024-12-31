@@ -14,6 +14,14 @@ class AsciiConverter {
             soft: '░▒▓█'  // Reversed order for low contrast effect
         };
         
+        // Initialize brightness strategies
+        this.brightnessStrategies = {
+            perceived: new PerceivedBrightnessStrategy(),
+            average: new AverageBrightnessStrategy(),
+            lightness: new LightnessBrightnessStrategy(),
+            luminosity: new LuminosityBrightnessStrategy()
+        };
+        
         this.canvas = document.createElement('canvas');
         this.context = this.canvas.getContext('2d');
     }
@@ -22,14 +30,14 @@ class AsciiConverter {
      * Gets the brightness of a pixel (0-1)
      * @param {Uint8ClampedArray} data - The image data array
      * @param {number} index - The starting index of the pixel
+     * @param {string} strategy - The brightness calculation strategy to use
      * @returns {number} The brightness value
      */
-    getBrightness(data, index) {
+    getBrightness(data, index, strategy = 'perceived') {
         const r = data[index];
         const g = data[index + 1];
         const b = data[index + 2];
-        // Using perceived brightness formula
-        return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+        return this.brightnessStrategies[strategy].calculateBrightness(r, g, b);
     }
 
     /**
@@ -58,9 +66,10 @@ class AsciiConverter {
      * @param {ImageData} imageData - The image data to convert
      * @param {number} width - The desired width in characters
      * @param {string} style - The art style to use
+     * @param {string} strategy - The brightness calculation strategy to use
      * @returns {string} The ASCII art representation
      */
-    convertToAscii(imageData, width, style = 'ascii') {
+    convertToAscii(imageData, width, style = 'ascii', strategy = 'perceived') {
         const chars = this.charSets[style];
         const aspectRatio = imageData.height / imageData.width;
         const height = Math.floor(width * aspectRatio * 0.45);
@@ -90,7 +99,7 @@ class AsciiConverter {
         for (let y = 0; y < height; y++) {
             for (let x = 0; x < width; x++) {
                 const index = (y * width + x) * 4;
-                let brightness = this.getBrightness(pixels, index);
+                let brightness = this.getBrightness(pixels, index, strategy);
                 brightness = this.adjustContrast(brightness, style);
                 const charIndex = Math.floor(brightness * (chars.length - 1));
                 asciiArt += chars[charIndex];

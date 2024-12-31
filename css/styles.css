@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section, .controls-section, .output-section {
+    margin: 20px 0;
+}
+
+.upload-instructions {
+    text-align: center;
+    color: #666;
+    position: relative;
+}
+
+.upload-instructions input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.preview-container {
+    margin: 10px 0;
+    max-width: 100%;
+    min-height: 200px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease;
+}
+
+.preview-container.drag-over {
+    border-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.preview-container img {
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.ascii-output {
+    font-family: monospace;
+    white-space: pre;
+    overflow-x: auto;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border: 1px solid #ddd;
+    min-height: 200px;
+}
+
+button, select {
+    padding: 8px 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+} 

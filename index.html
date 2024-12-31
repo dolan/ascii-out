@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Converter</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ASCII Art Converter</h1>
+        
+        <div class="upload-section">
+            <div class="upload-instructions">
+                <p>Drop an image here, paste from clipboard, or click to select</p>
+                <input type="file" id="image_input" accept="image/*">
+            </div>
+            <div id="preview_container" class="preview-container"></div>
+        </div>
+
+        <div class="controls-section">
+            <select id="art_style">
+                <option value="ascii">Classic ASCII</option>
+                <option value="blocks">Block Characters</option>
+                <option value="minimal">High Contrast</option>
+                <option value="soft">Low Contrast</option>
+            </select>
+            <select id="output_format">
+                <option value="text">Text (160 columns)</option>
+                <option value="text-wide">Text (320 columns)</option>
+                <option value="png">PNG Image</option>
+            </select>
+            <button id="convert_button">Convert to ASCII</button>
+        </div>
+
+        <div class="output-section">
+            <div id="ascii_output" class="ascii-output"></div>
+            <button id="download_button" disabled>Download Result</button>
+        </div>
+    </div>
+
+    <script src="js/image_processor.js"></script>
+    <script src="js/ascii_converter.js"></script>
+    <script src="js/file_handler.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

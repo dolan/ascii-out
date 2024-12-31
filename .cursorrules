@@ -1,0 +1,20 @@
+The purpose of this app is to convert images into ASCII Art
+
+It runs in the browser (implemented in javascript)
+It does not actually upload files to any file system, but rather processes them in RAM
+It uses an existing javascript library to output image data as ASCII Art
+It has two possible output formats
+  1) Raw text. The output will be downloadable as an 80-column ASCII image
+  2) PNG. The output will be downloadable as a PNG file that is an image of the rendered ASCII text.
+
+When generating project files
+- Use generation tools where necessary. Do not simulate their output (For example, use rails on the command line to generate a migration, do not simply generate the contents of a migration file)
+- Use snake_case_naming_conventions
+- One file per javascript class
+- Automatically create a blank test file for every new class that is created
+- Automatically comment the classes and all public methods
+
+When creating and applying requested changes:
+- do not change the existing algorithms unless the requested change explicitly asks for a change to the algorithm
+- do not substitute code from a similar implementation for existing code unless explicitly requested by the user
+- update any relevant comments that become out of date or add any that help illustrate the situation

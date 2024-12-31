@@ -74,4 +74,20 @@ button, select {
 button:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #666;
+}
+
+.footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 } 

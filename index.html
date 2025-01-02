@@ -13,14 +13,16 @@
         <div class="upload-section">
             <div class="upload-instructions">
                 <p>Drop an image here, paste from clipboard, or click to select</p>
-                <input type="file" id="image_input" accept="image/*">
             </div>
+            <label for="image_input" class="upload-button">Choose File</label>
+            <input type="file" id="image_input" accept="image/*" class="file-input">
             <div id="preview_container" class="preview-container"></div>
         </div>
 
         <div class="controls-section">
             <select id="art_style">
                 <option value="ascii">Classic ASCII</option>
+                <option value="extended_ascii">Extended ASCII</option>
                 <option value="blocks">Block Characters</option>
                 <option value="minimal">High Contrast</option>
                 <option value="soft">Low Contrast</option>

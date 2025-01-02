@@ -8,8 +8,9 @@ class AsciiConverter {
     constructor() {
         // Define character sets for different styles
         this.charSets = {
+            extended_ascii: " .'`^\",:;Il!i><~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$ΘΣΔжФЦقغعدظط゠ぁぃぅぇぉ黒骨畫龍".split('').reverse().join(''),
             ascii: '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,"^`\'. ',
-            blocks: '█▓▒░ ',
+            blocks: '█▉▊▋▌▍▎▏▓▒░⣿⣾⣽⣻⢿⡿⣟⣯⣷ ',
             minimal: '█ ',
             soft: '░▒▓█'  // Reversed order for low contrast effect
         };

@@ -24,14 +24,39 @@ body {
     position: relative;
 }
 
-.upload-instructions input[type="file"] {
+.file-input {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.upload-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
     cursor: pointer;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.upload-button:hover {
+    background-color: #45a049;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .upload-button {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
 }
 
 .preview-container {
